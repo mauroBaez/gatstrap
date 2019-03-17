@@ -52,7 +52,7 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
 
-        const pages = items.filter(({ node }) => /pages/.test(node.name))
+        const pages = items.filter(({ node }) => /page/.test(node.name))
         each(pages, ({ node }) => {
           if (!node.remark) return
           const { name } = path.parse(node.path)
