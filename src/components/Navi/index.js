@@ -6,7 +6,6 @@ class Navi extends React.Component {
     const { location, title } = this.props
     return (
       <nav className="navbar navbar-expand navbar-dark flex-column flex-md-row bg-primary">
-        <div className="container">
           <Link className="text-center" to="/">
             <h1 className="navbar-brand mb-0">{title}</h1>
           </Link>
@@ -18,24 +17,45 @@ class Navi extends React.Component {
                 }
               >
                 <Link to="/" className="nav-link">
-                  Home
+                  Inicio
                 </Link>
               </li>
               <li
                 className={
-                  location.pathname === '/profile/'
+                  location.pathname === '/mudanzas/'
                     ? 'nav-item active'
                     : 'nav-item'
                 }
               >
-                <Link to="/profile/" className="nav-link">
-                  Profile
+                <Link to="/mudanzas/" className="nav-link">
+                  Mudanzas
+                </Link>
+              </li>
+              <li
+                className={
+                  location.pathname === '/guardamuebles/'
+                    ? 'nav-item active'
+                    : 'nav-item'
+                }
+              >
+                <Link to="/guardamuebles/" className="nav-link">
+                  Guardamuebles
+                </Link>
+              </li>
+              <li
+                className={
+                  location.pathname === '/embalaje/'
+                    ? 'nav-item active'
+                    : 'nav-item'
+                }
+              >
+                <Link to="/embalaje/" className="nav-link">
+                  Servicio de embalaje
                 </Link>
               </li>
             </ul>
           </div>
           <div className="navbar-nav flex-row ml-md-auto d-none d-md-flex" />
-        </div>
       </nav>
     )
   }

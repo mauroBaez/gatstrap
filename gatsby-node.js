@@ -2,6 +2,10 @@ const each = require('lodash/each')
 const Promise = require('bluebird')
 const path = require('path')
 const PostTemplate = path.resolve('./src/templates/index.js')
+const { createFilePath } = require(`gatsby-source-filesystem`);
+
+
+
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -11,7 +15,7 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
-            allFile(filter: { extension: { regex: "/md|js/" } }, limit: 1000) {
+            allMarkdownRemark(filter: { extension: { regex: "/md|js/" } }, limit: 1000) {
               edges {
                 node {
                   id
@@ -22,6 +26,7 @@ exports.createPages = ({ graphql, actions }) => {
                     frontmatter {
                       layout
                       path
+                      title
                     }
                   }
                 }
@@ -47,7 +52,7 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
 
-        const pages = items.filter(({ node }) => /page/.test(node.name))
+        const pages = items.filter(({ node }) => /pages/.test(node.name))
         each(pages, ({ node }) => {
           if (!node.remark) return
           const { name } = path.parse(node.path)

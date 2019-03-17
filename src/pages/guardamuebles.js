@@ -7,9 +7,8 @@ import { siteMetadata } from '../../gatsby-config'
 import Layout from 'components/Layout'
 import Meta from 'components/Meta'
 import Icon from 'components/Icon'
-import ContactForm from 'components/ContactForm'
 
-class Inicio extends React.Component {
+class Guardamuebles extends React.Component {
   render() {
     const { location, data } = this.props
     const work1 = get(data, 'work1.childImageSharp.sizes')
@@ -19,72 +18,62 @@ class Inicio extends React.Component {
 
     return (
       <Layout location={location}>
-        <Meta site={siteMetadata} title="Inicio" />
-        
+        <Meta site={siteMetadata} title="Guardamuebles" />
         <div>
-          
-          <div className="jumbotron mb-0">
-            <div className="row">
-              <div className="col-md-6 ">
-                  <ContactForm />
-              </div>
-              <div className="col-md-6 headline">
-                <h1 itemprop="name" className="display-4">Mudanzas AVC</h1>
-                <h2 itemprop="description">Somos una Empresa de Transportes especializada en Mudanzas, Desalojos Judiciales y Guardamuebles</h2>
-              </div>
-            </div>
-            
-          </div>
-          <div className="linea mt-4 mb-4">
+          <section className="text-center">
             <div className="container">
-                <div className="row">
-                    <div className="col-sm-8">
-                      <p className="lead mb-0">
-                        Háganos depositarios de su confianza, será un placer atenderle
-                      </p>
-                    </div>
-                    <div className="col-sm-4">
-                        <div className="btn-wrapper">
-                            <a className="btn btn-primary btn-block" href="contactos.php">Contáctenos</a>
-                        </div>
-                    </div>
-                </div>
-        
+              <h1>jaxx2104</h1>
+              <p className="lead text-muted">Front-end engineer.</p>
+              <div>
+                <a
+                  ref="twButton"
+                  href="https://twitter.com/jaxx2104"
+                  className="twitter-follow-button"
+                  data-show-count="false"
+                >
+                  Follow @jaxx2104
+                </a>
+              </div>
             </div>
-          </div>
+          </section>
+
           <section className="bg-primary text-white text-center">
             <div className="container">
               <div className="row">
                 <div className="col-lg-12">
-                  <h2 className="section-heading">Nuestros Servicios de Transporte y Mudanzas</h2>
+                  <h2 className="section-heading">SKILL</h2>
                   <hr className="border-white" />
                 </div>
               </div>
             </div>
             <div className="container">
               <div className="row justify-content-md-center">
-                <div className="col-lg-4 col-12">
-                  <h2 className="section-heading">Mudanzas</h2>
+                <div className="col-lg-3 col-6">
                   <Icon title="HTML" name="html5" />
-                  <div className="btn-wrapper">
-                      <a className="btn btn-secondary btn-block" href="contactos.php">Contáctenos</a>
-                  </div>
                 </div>
-                <div className="col-lg-4 col-12">
-                  <h2 className="section-heading">Guardamuebles</h2>
-                  <Icon title="HTML" name="html5" />
-                  <div className="btn-wrapper">
-                      <a className="btn btn-secondary btn-block" href="contactos.php">Contáctenos</a>
-                  </div>
+                <div className="col-lg-3 col-6">
+                  <Icon title="JavaScript" name="js" />
                 </div>
-                <div className="col-lg-4 col-12">
-                  <h2 className="section-heading">Embalaje</h2>
-                  <Icon title="HTML" name="html5" />
-                  <div className="btn-wrapper">
-                      <a className="btn btn-secondary btn-block" href="contactos.php">Contáctenos</a>
-                  </div>
+                <div className="col-lg-3 col-6">
+                  <Icon title="React.js" name="react" />
                 </div>
-                
+                <div className="col-lg-3 col-6">
+                  <Icon title="Vue.js" name="vuejs" />
+                </div>
+              </div>
+              <div className="row justify-content-md-center">
+                <div className="col-lg-3 col-6">
+                  <Icon title="Node.js" name="node" />
+                </div>
+                <div className="col-lg-3 col-6 ">
+                  <Icon title="PHP" name="php" />
+                </div>
+                <div className="col-lg-3 col-6 ">
+                  <Icon title="AWS" name="aws" />
+                </div>
+                <div className="col-lg-3 col-6 ">
+                  <Icon title="Swift" name="apple" />
+                </div>
               </div>
             </div>
           </section>
@@ -94,7 +83,15 @@ class Inicio extends React.Component {
             <div className="container">
               <div className="row cover-over">
                 <div className="col-md-12 text-left">
-                  
+                  <h2 className="section-heading">Features</h2>
+                  <p>
+                    I'm a front-end engineer in Japan 🗼
+                    <br />
+                    Used to be a designer of furniture and architecture.
+                    <br />
+                  </p>
+                  <li>2013 ~ 2017: J-CAST News</li>
+                  <li>2017 ~ : Recruit Lifestyle</li>
                 </div>
               </div>
             </div>
@@ -161,10 +158,10 @@ class Inicio extends React.Component {
   }
 }
 
-export default Inicio
+export default Guardamuebles
 
 export const query = graphql`
-  query InicioPageQuery {
+  query GuardamueblesPageQuery {
     
     work1: file(name: { eq: "work1" }) {
       childImageSharp {
